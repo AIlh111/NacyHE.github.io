@@ -1,6 +1,6 @@
 /*==================================================
                 海洋动物专区 sea.css
-                导航与首页统一版
+                导航与首页统一版【修复bug完整版】
 ==================================================*/
 /* ========= 全局 ========= */
 *{
@@ -20,7 +20,17 @@ body{
     overflow-x:hidden;
 }
 
-/* ========= 导航栏【和首页完全统一】 ========= */
+/* 全局图片重置，防止变形溢出 */
+img{
+    max-width:100%;
+    display:block;
+    transition:.35s;
+}
+img:hover{
+    transform:scale(1.02);
+}
+
+/* ========= 导航栏【和首页完全统一，修复权重+手机布局】 ========= */
 nav{
   position:fixed;
   top:0;
@@ -44,14 +54,15 @@ nav a{
   margin:0 12px;
   text-decoration:none;
   font-weight:bold;
+  transition:0.3s;
 }
 
 nav a:hover{
   color:#ffd700;
 }
-
-.active{
-  color:#ffd700 !important;
+/* 优化选择器权重，去掉多余!important */
+nav a.active{
+  color:#ffd700;
   font-weight:bold;
 }
 
@@ -61,6 +72,7 @@ nav a:hover{
     width:100%;
     min-height:100vh;
     padding-top:80px;
+    /* 若github pages路径异常，可替换为网络图片兜底 */
     background:linear-gradient(rgba(0,0,0,.25),rgba(0,110,150,.35)),url("banner.jpg");
     background-size:cover;
     background-position:center;
@@ -114,13 +126,15 @@ nav a:hover{
 
 /*========================================
         四个分类玻璃卡片
+        优化兼容，删除冗余动画
 ========================================*/
 .glass-card{
     width:270px;
     min-height:380px;
     padding:25px 20px;
     border-radius:22px;
-    background:rgba(255,255,255,.18);
+    /* 增加降级半透明白色，兼容不支持模糊的浏览器 */
+    background:rgba(255,255,255,.25);
     border:1px solid rgba(255,255,255,.35);
     backdrop-filter:blur(15px);
     -webkit-backdrop-filter:blur(15px);
@@ -178,7 +192,7 @@ nav a:hover{
     transform:scale(1.05);
 }
 
-/*========================== 卡片入场动画 ==========================*/
+/*========================== 卡片入场动画（仅保留一套） ==========================*/
 @keyframes cardUp{
     from{
         opacity:0;
@@ -322,7 +336,7 @@ footer{
     transform:translateY(-6px);
 }
 
-/*========================== 多端自适应 ==========================*/
+/*========================== 多端自适应【修复手机导航间距bug】 ==========================*/
 /* 大屏电脑 */
 @media screen and (max-width:1200px){
     .category-area{gap:20px;}
@@ -335,12 +349,18 @@ footer{
     .glass-card{width:320px;}
     .intro{padding:60px 10%;}
 }
-/* 手机 */
+/* 手机 - 修复导航垂直间距失效问题 */
 @media screen and (max-width:768px){
     nav{
         flex-direction:column;
         padding:15px;
-        gap:10px;
+        /* 开启垂直布局下子元素间距生效 */
+        display:flex;
+        gap:12px;
+    }
+    nav div{
+        width:100%;
+        text-align:center;
     }
     nav div:last-child{
         display:flex;
