@@ -1,259 +1,98 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
 <head>
-
     <meta charset="UTF-8">
-
+    <!-- 移动端适配关键标签 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>海洋动物百科</title>
-
+    <!-- 外部样式表 -->
     <link rel="stylesheet" href="sea.css">
-
 </head>
-
 <body>
-
-<!-- =================== 导航栏 =================== -->
-
+<!-- 导航栏 -->
 <header class="navbar">
-
-    <div class="logo">
-
-        🌊 海洋动物百科
-
-    </div>
-
+    <div class="logo">🌊 海洋动物百科</div>
     <nav>
-
-        <a href="index.html">首页</a>
-
-        <a href="sea.html" class="active">海洋动物</a>
-
-        <a href="protect.html">保护计划</a>
-
-        <a href="#">关于我们</a>
-
+        <a href="index.html" class="active">首页</a>
+        <a href="bird.html" class="active">鸟类动物</a>
+        <a href="land.html" class="active">陆地动物</a>
+        <a href="bird.html" class="active">保护</a>
     </nav>
-
 </header>
 
-
-<!-- =================== Banner =================== -->
-
+<!-- 全屏横幅 -->
 <section class="sea-banner">
-
     <div class="banner-mask"></div>
-
     <div class="banner-content">
-
         <h1>探索神秘海洋世界</h1>
-
-        <p>
-
-            了解深海生命，守护蓝色家园
-
-        </p>
-
+        <p>了解深海生命，守护蓝色家园</p>
     </div>
-
-</section>
-
-
-<!-- =================== 分类 =================== -->
-
-<section class="category">
-
-    <h2>
-
-        海洋动物专区
-
-    </h2>
-
-    <div class="category-line"></div>
-
-    <div class="category-area">        <!-- 深海鱼类 -->
-
+    <!-- 修正：卡片从绝对定位改为banner内部正常流式布局，不再压图片 -->
+    <div class="category-area">
+        <!-- 深海鱼类 -->
         <div class="glass-card">
-
             <img src="images/fish.jpg" alt="深海鱼类">
-
             <h3>深海鱼类</h3>
-
-            <p>
-
-                深海鱼类生活在数百米甚至数千米的海洋深处，
-                具有耐高压、发光等特殊生存能力。
-
-            </p>
-
-            <a href="pages/deepsea.html">
-
-                <button>立即探索</button>
-
-            </a>
-
+            <p>深海鱼类生活在数百米甚至数千米的海洋深处，具有耐高压、发光等特殊生存能力。</p>
+            <a href="pages/deepsea.html"><button>立即探索</button></a>
         </div>
-
-
         <!-- 海洋哺乳动物 -->
-
         <div class="glass-card">
-
             <img src="images/whale.jpg" alt="海洋哺乳动物">
-
             <h3>海洋哺乳动物</h3>
-
-            <p>
-
-                包括蓝鲸、海豚、海豹等，
-                它们依靠肺呼吸，
-                是海洋中的智慧生物。
-
-            </p>
-
-            <a href="pages/mammal.html">
-
-                <button>立即探索</button>
-
-            </a>
-
+            <p>包括蓝鲸、海豚、海豹等，它们依靠肺呼吸，是海洋中的智慧生物。</p>
+            <a href="pages/mammal.html"><button>立即探索</button></a>
         </div>
-
-
         <!-- 珊瑚礁生物 -->
-
         <div class="glass-card">
-
             <img src="images/coral.jpg" alt="珊瑚礁生物">
-
             <h3>珊瑚礁生物</h3>
-
-            <p>
-
-                珊瑚礁拥有极高的生物多样性，
-                小丑鱼、海葵等共同组成绚丽的生态系统。
-
-            </p>
-
-            <a href="pages/coral.html">
-
-                <button>立即探索</button>
-
-            </a>
-
+            <p>珊瑚礁拥有极高的生物多样性，小丑鱼、海葵等共同组成绚丽的生态系统。</p>
+            <a href="pages/coral.html"><button>立即探索</button></a>
         </div>
-
-
         <!-- 海洋无脊椎动物 -->
-
         <div class="glass-card">
-
             <img src="images/octopus.jpg" alt="海洋无脊椎动物">
-
             <h3>海洋无脊椎动物</h3>
-
-            <p>
-
-                包括章鱼、水母、海星、海胆等，
-                形态各异，
-                是海洋生态的重要组成部分。
-
-            </p>
-
-            <a href="pages/invertebrate.html">
-
-                <button>立即探索</button>
-
-            </a>
-
+            <p>包括章鱼、水母、海星、海胆等，形态各异，是海洋生态的重要组成部分。</p>
+            <a href="pages/invertebrate.html"><button>立即探索</button></a>
         </div>
-
     </div>
-
 </section>
 
-
-<!-- =================== 介绍 =================== -->
-
+<!-- 海洋介绍板块 -->
 <section class="intro">
-
-    <h2>
-
-        探索海洋生命
-
-    </h2>
-
+    <h2>探索海洋生命</h2>
     <div class="line"></div>
-
-    <p>
-
-        海洋覆盖了地球约71%的面积，
-        孕育着数百万种生命。
-
-        从五彩缤纷的珊瑚礁，
-        到神秘莫测的深海世界，
-
-        每一种海洋动物都拥有独特的生存智慧。
-
-    </p>
-
+    <p>海洋覆盖了地球约71%的面积，孕育着数百万种生命。从五彩缤纷的珊瑚礁，到神秘莫测的深海世界，每一种海洋动物都拥有独特的生存智慧。</p>
 </section>
 
-
-<!-- =================== 功能 =================== -->
-
+<!-- 功能模块 -->
 <section class="function-area">
-
     <div class="function-box">
-
-        🐢<br>
-
-        重点保护物种
-
+        <span>🐢</span>
+        <span>重点保护物种</span>
     </div>
-
     <div class="function-box">
-
-        🧭<br>
-
-        迁徙路线
-
+        <span>🧭</span>
+        <span>迁徙路线</span>
     </div>
-
     <div class="function-box">
-
-        🌍<br>
-
-        栖息地现状
-
+        <span>🌍</span>
+        <span>栖息地现状</span>
     </div>
-
     <div class="function-box">
-
-        🌱<br>
-
-        科普活动
-
+        <span>🌱</span>
+        <span>科普活动</span>
     </div>
-
 </section>
 
-
+<!-- 页脚 -->
 <footer>
-
     ©2026 海洋动物百科 Ocean Animal Encyclopedia
-
 </footer>
 
-
-<a href="#" class="top-btn">
-
-↑
-
-</a>
-
+<!-- 返回顶部 -->
+<a href="#" class="top-btn">↑</a>
 </body>
-
 </html>
