@@ -1,7 +1,8 @@
 /*==================================================
                 海洋无脊椎动物专题 invertebrate.css
+                独立样式、不复用 coral.css
 ==================================================*/
-/* ========= 全局通用样式（基础适配） ========= */
+/* ========= 全局通用样式 ========= */
 *{
     margin:0;
     padding:0;
@@ -19,7 +20,6 @@ body{
     overflow-x:hidden;
 }
 
-/* 全局图片统一重置，防止变形溢出 */
 img{
     max-width:100%;
     display:block;
@@ -29,7 +29,7 @@ img:hover{
     transform:scale(1.02);
 }
 
-/* ========= 顶部导航栏（全站统一样式） ========= */
+/* ========= 顶部导航栏 ========= */
 nav{
   position:fixed;
   top:0;
@@ -64,7 +64,7 @@ nav a.active{
   font-weight:bold;
 }
 
-/* ========= 无脊椎动物专题专属Banner ========= */
+/* ========= 专题Banner ========= */
 .sea-banner{
     position:relative;
     width:100%;
@@ -110,7 +110,7 @@ nav a.active{
     margin:0 auto;
 }
 
-/* 通用板块标题样式 */
+/* 通用标题分割线 */
 .common-title{
     text-align:center;
     color:#144c78;
@@ -138,7 +138,7 @@ nav a.active{
     line-height:36px;
 }
 
-/* ========= 海洋无脊椎动物类群分类板块 ========= */
+/* ========= 主要类群板块 ========= */
 .inver-zone {
     width: 100%;
     background: #f0f7fc;
@@ -233,7 +233,7 @@ nav a.active{
     color: #444;
 }
 
-/* 无脊椎动物核心特征板块 */
+/* ========= 核心特征板块 ========= */
 .inver-feature{
     width:100%;
     background:white;
@@ -295,8 +295,8 @@ nav a.active{
     transform:scale(1.05);
 }
 
-/* 无脊椎代表物种卡片板块 */
-.deepsea-species{
+/* ========= 代表物种卡片板块 ========= */
+.inver-species{
     width:100%;
     background:#f0f7fc;
     padding:80px 15%;
@@ -337,8 +337,8 @@ nav a.active{
     line-height:30px;
 }
 
-/* 生态价值板块 */
-.deepsea-eco{
+/* ========= 生态价值板块 ========= */
+.inver-eco{
     width:100%;
     background:white;
     padding:80px 15%;
@@ -352,7 +352,7 @@ nav a.active{
     color:#444;
 }
 
-/* 页脚样式 */
+/* 页脚 */
 footer{
     background:#103b63;
     color:white;
