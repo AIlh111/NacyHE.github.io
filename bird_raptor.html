@@ -114,11 +114,123 @@
             font-size: 16px;
             text-indent: 2em;
         }
+        .back-index{
+            display:block;
+            text-align:center;
+            margin-bottom:20px;
+            color:#487d6b;
+            text-decoration:none;
+        }
 
-        .species-grid {
+        .zone-title {
+            font-size: 28px;
+            color: #356655;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .zone-line {
+            width: 100px;
+            height: 3px;
+            background: #73b89f;
+            margin: 0 auto 40px;
+            border-radius: 3px;
+        }
+        .layer-wrap {
             max-width: 1200px;
             margin: 0 auto 80px;
             padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+        .layer-item {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .layer-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .layer-image {
+            width: 50%;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(120, 160, 140, 0.12);
+        }
+        .layer-image img {
+            width: 100%;
+            display: block;
+        }
+        .layer-text {
+            width: 50%;
+        }
+        .layer-depth {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #c8e2d7;
+            color: #2d5748;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .layer-text h3 {
+            font-size: 24px;
+            color: #2f5e4e;
+            margin-bottom: 16px;
+        }
+        .layer-text p {
+            line-height: 1.8;
+            color: #4a6b5f;
+        }
+
+        .feature-wrap {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+        .feature-box {
+            display: flex;
+            gap: 36px;
+            align-items: center;
+        }
+        .feature-text {
+            width: 55%;
+        }
+        .feature-text h3 {
+            font-size: 24px;
+            color: #2f5e4e;
+            margin-bottom: 16px;
+        }
+        .feature-text p {
+            line-height: 1.8;
+            color: #4a6b5f;
+            margin-bottom: 16px;
+        }
+        .feature-list {
+            padding-left: 22px;
+            line-height: 1.8;
+            color: #426559;
+        }
+        .feature-list li {
+            margin: 8px 0;
+        }
+        .feature-img {
+            width: 45%;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(120, 160, 140, 0.12);
+        }
+        .feature-img img {
+            width: 100%;
+            display: block;
+        }
+
+        .species-wrap {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+        .species-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
@@ -160,7 +272,7 @@
             color: #c0392b;
         }
 
-        .bird-eco {
+        .eco-wrap {
             max-width: 1200px;
             margin: 0 auto 80px;
             padding: 0 24px;
@@ -200,26 +312,19 @@
         .top-btn:hover {
             background: #5fa88d;
         }
-        .back-index{
-            display:block;
-            text-align:center;
-            margin-bottom:20px;
-            color:#487d6b;
-            text-decoration:none;
-        }
     </style>
 </head>
 
 <body>
 <div id="top"></div>
 <nav id="nav">
-  <div>🐾 动物世界科普平台</div>
+  <div>🐾 动物百科</div>
   <div>
-    <a href="index.html">网站首页</a>
-    <a href="land.html">陆生动物</a>
-    <a href="sea.html">海洋生物</a>
-    <a href="bird.html" class="active">飞禽鸟类</a>
-    <a href="protect.html">动物保护</a>
+    <a href="index.html">首页</a>
+    <a href="land.html">陆地</a>
+    <a href="sea.html">海洋</a>
+    <a href="bird.html" class="active">鸟类</a>
+    <a href="protect.html">保护</a>
   </div>
 </nav>
 
@@ -234,12 +339,60 @@
 <section class="intro">
     <h2 class="common-title">猛禽类群概述</h2>
     <div class="line"></div>
-    <p>猛禽泛指隼形目与鸮形目肉食性鸟类，依靠超强远视视觉、钩状利喙与穿刺利爪完成捕猎。昼行鹰隼类擅长高空盘旋俯冲猎杀，夜行猫头鹰依靠听觉定位地下猎物。所有猛禽均为益鸟，大幅抑制鼠害、泛滥小型兽类数量，维持山林农田生态平衡。我国法律明确规定，所有野生猛禽全部属于国家二级及以上保护动物，禁止任何捕捉、贩卖、私自饲养行为。</p>
+    <p>猛禽在生物分类上包含隼形目与鸮形目两大类别，是完全肉食性的顶级鸟类掠食者。昼行性鹰隼依靠极致远视视力高空俯冲捕猎，夜行性鸮类依托双耳不对称结构，在无光环境精准定位猎物。所有猛禽在生态链中承担抑制鼠害、控制小型动物泛滥的关键作用，我国现行野生动物保护法明确规定，境内全部野生猛禽均属于国家二级及以上保护野生动物，禁止猎捕、交易、私自驯养、伤害等一切违规行为。</p>
     <a href="bird.html" class="back-index">← 返回鸟类总专区首页</a>
 </section>
 
 <section>
-    <h2 class="common-title">三大代表猛禽物种</h2>
+    <h2 class="zone-title">猛禽两大生态类群划分</h2>
+    <div class="zone-line"></div>
+    <div class="layer-wrap">
+        <div class="layer-item">
+            <div class="layer-image">
+                <img src="https://picsum.photos/id/1024/800/500" alt="昼行鹰隼类">
+            </div>
+            <div class="layer-text">
+                <span class="layer-depth">日间活动类群</span>
+                <h3>昼行鹰隼类猛禽</h3>
+                <p>该类群包含金雕、苍鹰、游隼等物种，双眼具备中央凹双重视觉结构，远视分辨率是人眼的8倍以上，可在上千米高空锁定地面小型猎物。翅膀宽大适合盘旋滑翔，短翼种类可在密林之间灵活穿梭，捕猎对象多为啮齿类、野兔、小型鸟类，领地意识极强，多为一夫一妻终生配对繁育后代。</p>
+            </div>
+        </div>
+        <div class="layer-item">
+            <div class="layer-image">
+                <img src="https://picsum.photos/id/1059/800/500" alt="夜行鸮类">
+            </div>
+            <div class="layer-text">
+                <span class="layer-depth">夜间活动类群</span>
+                <h3>夜行鸮类猛禽（猫头鹰）</h3>
+                <p>鸮类面部面盘如同声波收集器，左右耳道位置不对称，仅依靠听觉就能精准判断地下田鼠位置，翅膀羽毛边缘具备锯齿状静音结构，飞行几乎没有声响。大多白天隐匿树洞岩壁休息，夜间外出捕食，单只成年鸮一年可捕食上千只农田害鼠，是农业生态天然的虫害防控帮手。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-wrap">
+    <h2 class="common-title">猛禽独有的生理生存特征</h2>
+    <div class="line"></div>
+    <div class="feature-box">
+        <div class="feature-text">
+            <h3>适配捕猎生存的演化特点</h3>
+            <p>千万年的演化让猛禽从视觉、肢体、听觉、羽毛全方位适配顶级掠食定位，是鸟类中结构特化最鲜明的类群。</p>
+            <ul class="feature-list">
+                <li><strong>钩状锐喙结构</strong>：上颚喙尖向下弯曲，可撕裂皮肉、剥离猎物组织，进食效率极高。</li>
+                <li><strong>穿刺利爪足部</strong>：四根脚趾可强力收紧穿刺，瞬间刺穿猎物躯干，限制其挣扎逃逸。</li>
+                <li><strong>广角远视视觉</strong>：眼球呈管状而非球状，无法大范围转动眼球，依靠扭转头部270°弥补视野盲区。</li>
+                <li><strong>静音飞行羽片</strong>：鸮类飞羽边缘柔化降噪，低空飞行不会产生气流噪音，不会惊扰地下猎物。</li>
+                <li><strong>极强耐饥能力</strong>：单次进食大量肉类后，可数天不捕猎，适应野外猎物分布不均的生存环境。</li>
+            </ul>
+        </div>
+        <div class="feature-img">
+            <img src="https://picsum.photos/id/1010/800/600" alt="猛禽生态特写">
+        </div>
+    </div>
+</section>
+
+<section class="species-wrap">
+    <h2 class="common-title">三大代表猛禽物种详解</h2>
     <div class="line"></div>
     <div class="species-grid">
         <div class="species-card">
@@ -269,10 +422,10 @@
     </div>
 </section>
 
-<section class="bird-eco">
-    <h2 class="common-title">猛禽保护法律与科普</h2>
+<section class="eco-wrap">
+    <h2 class="common-title">猛禽保护法律与生态意义</h2>
     <div class="line"></div>
-    <p class="eco-desc">猛禽难以人工规模化繁育，野外种群一旦遭到捕猎很难快速恢复。很多人出于猎奇心态网购老鹰、猫头鹰作为宠物，此类交易全程违法，平台与线下商贩都会被追责。若遇到受伤落单猛禽，切勿自行喂食笼养，猛禽极易应激猝死，应当第一时间联系当地林业和草原局、野生动物救助中心，由专业人员收容救治后野放。</p>
+    <p class="eco-desc">猛禽难以人工规模化繁育，野外种群一旦遭到捕猎很难快速恢复。很多人出于猎奇心态网购老鹰、猫头鹰作为宠物，此类交易全程违法，平台与线下商贩都会被追责。若遇到受伤落单猛禽，切勿自行喂食笼养，猛禽极易应激猝死，应当第一时间联系当地林业和草原局、野生动物救助中心，由专业人员收容救治后野放。同时农田大规模毒饵灭鼠会间接造成猛禽二次中毒死亡，科学灭鼠、拒绝非法捕鸟网具，才能稳固山林食物链顶层种群数量。</p>
 </section>
 
 <footer>
