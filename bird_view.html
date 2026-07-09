@@ -127,43 +127,42 @@
             margin: 0 auto 40px;
             border-radius: 3px;
         }
+
+        /* 新版排版：取消左右分栏，统一上图下文垂直排列 */
         .layer-wrap {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto 80px;
             padding: 0 24px;
             display: flex;
             flex-direction: column;
-            gap: 48px;
+            gap: 50px;
         }
         .layer-item {
             display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-        .layer-item:nth-child(even) {
-            flex-direction: row-reverse;
+            flex-direction: column;
+            gap: 24px;
         }
         .layer-image {
-            width: 50%;
-            border-radius: 14px;
+            width: 100%;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 16px rgba(120, 160, 140, 0.12);
+            box-shadow: 0 4px 18px rgba(120, 160, 140, 0.15);
         }
         .layer-image img {
             width: 100%;
             display: block;
         }
         .layer-text {
-            width: 50%;
+            width: 100%;
         }
         .layer-depth {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 4px 14px;
             background: #c8e2d7;
             color: #2d5748;
-            border-radius: 20px;
+            border-radius: 22px;
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .layer-text h3 {
             font-size: 24px;
@@ -175,18 +174,19 @@
             color: #4a6b5f;
         }
 
+        /* 特征模块同样改为上图下文 */
         .feature-wrap {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto 80px;
             padding: 0 24px;
         }
         .feature-box {
             display: flex;
-            gap: 36px;
-            align-items: center;
+            flex-direction: column;
+            gap: 28px;
         }
         .feature-text {
-            width: 55%;
+            width: 100%;
         }
         .feature-text h3 {
             font-size: 24px;
@@ -207,10 +207,10 @@
             margin: 8px 0;
         }
         .feature-img {
-            width: 45%;
-            border-radius: 14px;
+            width: 100%;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 16px rgba(120, 160, 140, 0.12);
+            box-shadow: 0 4px 18px rgba(120, 160, 140, 0.15);
         }
         .feature-img img {
             width: 100%;
@@ -225,19 +225,29 @@
         .species-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 24px;
+        }
+        @media (max-width: 800px) {
+            .species-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 550px) {
+            .species-grid {
+                grid-template-columns: 1fr;
+            }
         }
         .species-card {
             background: #ffffff;
             border: 1px solid #e1ede8;
-            border-radius: 14px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 3px 12px rgba(135, 175, 160, 0.08);
             transition: all 0.3s ease;
         }
         .species-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 6px 18px rgba(120, 165, 145, 0.14);
+            box-shadow: 0 6px 20px rgba(120, 165, 145, 0.14);
         }
         .species-card img {
             width: 100%;
@@ -265,7 +275,7 @@
         }
 
         .eco-wrap {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto 80px;
             padding: 0 24px;
         }
@@ -322,14 +332,14 @@
     <div class="banner-mask"></div>
     <div class="banner-content">
         <h1>🦜 观赏珍鸟专题</h1>
-        <p>羽色斑斓鸣啼婉转，理性看待人工观赏与野生保护</p>
+        <p>羽色斑斓鸣啼婉转，理性看待人工繁育与野生保护</p>
     </div>
 </section>
 
 <section class="intro">
     <h2 class="common-title">观赏鸟类类群概述</h2>
     <div class="line"></div>
-    <p>观赏鸟类依靠艳丽羽毛、多变鸣唱获得人类喜爱，长久以来被当作笼养宠物与园林景观动物。但我国2021年新版三有名录大范围升级保护等级，画眉、八哥、所有原生鹦鹉全部划入保护范畴。仅正规养殖场人工繁育、具备合法手续的个体允许流通饲养，野外捕捉、网捕售卖野生观赏鸟属于违法行为，会面临行政处罚与刑事拘留。此类鸟类长期人工驯化后野外生存能力大幅退化，随意放生会严重冲击本土野生鸟类生态种群。</p>
+    <p>观赏鸟类依靠艳丽羽毛、多变鸣叫声深受人们喜爱，长期被当作笼养宠物与园林景观鸟类。但我国2021年新版三有野生动物名录大幅提升保护范围，画眉、八哥、本土原生鹦鹉全部划入保护物种。仅正规养殖场人工繁育、具备合法手续的个体允许流通饲养；野外捕捉、网捕售卖野生观赏鸟类属于违法行为，会面临行政处罚与刑事拘留。这类鸟类经过长期人工驯化后野外生存能力大幅退化，随意放生会严重破坏本土野生鸟类生态种群。</p>
     <a href="bird.html" class="back-index">← 返回鸟类总专区首页</a>
 </section>
 
@@ -344,7 +354,7 @@
             <div class="layer-text">
                 <span class="layer-depth">本土原生种群</span>
                 <h3>国内原生鸣禽与观赏鸟</h3>
-                <p>画眉、百灵、相思鸟、八哥等均为我国本土原生鸟类，千百年来因悦耳鸣唱被大量捕捉笼养，野外种群数量断崖式下跌。出于物种保育需求，国家将该类物种全部升级为二级保护动物，彻底禁止个人私自捕捉、交易、无证饲养，从源头遏制野生种群枯竭。</p>
+                <p>画眉、百灵、相思鸟、八哥都属于我国本土原生鸟类，千百年来因悦耳鸣叫被大量捕捉笼养，野外种群数量断崖式下降。出于物种保育需求，国家将该类物种全部升级为二级保护动物，彻底禁止个人私自捕捉、交易、无证饲养，从源头遏制野生种群枯竭。</p>
             </div>
         </div>
         <div class="layer-item">
@@ -354,7 +364,7 @@
             <div class="layer-text">
                 <span class="layer-depth">外来引种繁育类</span>
                 <h3>境外引种人工繁育宠物鸟</h3>
-                <p>虎皮鹦鹉、玄凤鹦鹉等原产澳大利亚，经过上百年人工定向繁育，种群数量极其庞大，不属于我国本土野生保护物种。但需要严格区分：仅人工多代繁育个体可合规作为宠物，禁止私自放生野外，避免外来物种入侵挤压本土鸟类生存空间。</p>
+                <p>虎皮鹦鹉、玄凤鹦鹉原产于澳大利亚，经过上百年定向人工繁育，种群基数极其庞大，不属于我国本土野生保护动物。但需要严格区分：仅多代人工繁殖个体可合规作为宠物，禁止随意放生至野外环境，防止外来物种入侵挤压本土鸟类生存空间。</p>
             </div>
         </div>
     </div>
@@ -365,14 +375,14 @@
     <div class="line"></div>
     <div class="feature-box">
         <div class="feature-text">
-            <h3>外形与习性演化特点</h3>
-            <p>人工选育会不断放大羽色艳丽、叫声多变等特征，但长期笼养会彻底丧失野外生存本能，造成物种生态层面的退化。</p>
+            <h3>适配观赏选育的演化特点</h3>
+            <p>人工选育会不断放大艳丽毛色、婉转鸣唱等观赏性特征，但长期笼养会彻底丧失野外生存本能，造成物种生态层面退化。</p>
             <ul class="feature-list">
-                <li><strong>装饰性外观选育</strong>：人工繁育会筛选花色、尾羽长度，让外观更具备观赏价值，弱化野外伪装色。</li>
-                <li><strong>鸣唱后天驯化</strong>：原生鸟类鸣叫用于领地宣告与求偶，笼养环境下人为训练模仿声响，违背自然行为习性。</li>
-                <li><strong>飞行能力退化</strong>：狭小笼舍限制飞翔，胸肌萎缩、骨骼脆弱，放生后无法觅食躲避天敌，大概率短期内死亡。</li>
-                <li><strong>近亲繁育遗传病</strong>：小规模养殖户近亲繁殖，极易出现畸形、体弱、短命个体。</li>
-                <li><strong>野生捕捉高损耗</strong>：野捕过程中惊吓、挤压、运输缺水缺食，超半数鸟类在流通环节直接死亡。</li>
+                <li><strong>外观定向选育</strong>：人工繁殖筛选花色、尾羽长短，强化观赏属性，弱化野外伪装保护色。</li>
+                <li><strong>鸣唱后天驯化</strong>：原生鸟类鸣叫用于领地宣告与求偶，笼养环境下人为训练模仿声响，违背自然习性。</li>
+                <li><strong>飞行能力退化</strong>：狭小笼舍限制飞翔，胸肌萎缩、骨骼脆弱，放生后无法觅食躲避天敌，短时间内极易死亡。</li>
+                <li><strong>近亲繁育遗传病</strong>：小型养殖场近亲繁殖，幼鸟畸形、体弱、短命概率大幅升高。</li>
+                <li><strong>野生捕捉损耗率高</strong>：野外抓捕过程惊吓、挤压、缺水缺食，超过半数鸟类在运输流通环节直接死亡。</li>
             </ul>
         </div>
         <div class="feature-img">
@@ -382,7 +392,7 @@
 </section>
 
 <section class="species-wrap">
-    <h2 class="common-title">三大代表观赏鸟类物种详解</h2>
+    <h2 class="common-title">三大代表观赏鸟类物种介绍</h2>
     <div class="line"></div>
     <div class="species-grid">
         <div class="species-card">
@@ -390,15 +400,15 @@
             <div class="species-content">
                 <h3>蓝孔雀</h3>
                 <p><strong>保护级别：三有保护动物，野生种群二级保护</strong></p>
-                <p>雄性尾屏布满眼状斑纹，繁殖期开屏求偶威慑天敌。仅人工合规繁育个体可用于园区观赏，原生野生种群禁止捕捉交易，不可随意野外放生造成外来物种入侵。</p>
+                <p>雄性尾屏布满眼状斑纹，繁殖期开屏求偶威慑天敌。仅人工合规繁育个体可用于园区观赏展示，野生种群严禁捕猎交易，不可随意野外放生造成外来物种生态入侵。</p>
             </div>
         </div>
         <div class="species-card">
             <img src="https://picsum.photos/id/1060/600/320" alt="虎皮鹦鹉">
             <div class="species-content">
                 <h3>虎皮鹦鹉</h3>
-                <p><strong>保护说明：外来人工繁育宠物，本土野生鹦鹉全保护</strong></p>
-                <p>原产澳大利亚，全球最普及宠物鹦鹉，人工繁殖体量极大。但中国境内本土野生鹦鹉全部列入国家保护名录，网购野生鹦鹉、牡丹鹦鹉野生个体均涉嫌违法。</p>
+                <p><strong>说明：外来人工繁育宠物，本土野生鹦鹉全部受保护</strong></p>
+                <p>原产澳大利亚，全球普及率最高的宠物鹦鹉，人工繁育规模极大。但我国境内所有原生野生鹦鹉均列入国家保护名录，网购野生鹦鹉、野生牡丹鹦鹉均属于违法行为。</p>
             </div>
         </div>
         <div class="species-card">
@@ -406,7 +416,7 @@
             <div class="species-content">
                 <h3>画眉</h3>
                 <p><strong>保护级别：国家二级保护动物</strong></p>
-                <p>因婉转多变鸣唱被长期笼养，野外种群因过度捕捉数量锐减。2021年正式升级为国家二级保护动物，猎捕、贩卖、无证饲养画眉均触犯野生动物保护法。</p>
+                <p>因清亮多变的鸣叫声长期被笼养，野外种群因过度捕捉数量锐减。2021年正式升级为国家二级保护动物，猎捕、贩卖、无证饲养画眉都会触犯野生动物保护相关法规。</p>
             </div>
         </div>
     </div>
@@ -415,7 +425,7 @@
 <section class="eco-wrap">
     <h2 class="common-title">饲养与法律科普提醒</h2>
     <div class="line"></div>
-    <p class="eco-desc">很多花鸟市场私下兜售野捕画眉、百灵、相思鸟等鸣禽，此类鸟类大多在捕捉运输途中应激死亡，存活个体也携带病菌寄生虫。随意放生人工宠物鸟类会破坏本土生态链条，挤压原生鸟类生存资源。想要饲养观赏鸟类务必确认来源合法、手续齐全，拒绝来路不明野生个体，从源头抵制野鸟非法贸易。同时城市公园、自然保护区内禁止私自投喂、捕捉野生鸟类，维护原生鸟类自然栖息环境。</p>
+    <p class="eco-desc">不少花鸟市场私下兜售野外捕获的画眉、百灵、相思鸟等鸣禽，这类鸟类在抓捕运输途中极易应激患病死亡，存活个体也极易携带病菌寄生虫。随意弃养放生人工宠物鸟会打破本地食物链，挤占本土鸟类食物与栖息资源。若想要饲养观赏鸟类，务必查验来源与繁育资质，坚决拒绝野生个体。城市公园、自然保护区内请勿私自投喂、捕捉野生鸟类，守护原生鸟类自然栖息环境。</p>
 </section>
 
 <footer>
