@@ -1,27 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>鸟类动物</title>
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>飞禽鸟类专区 | 动物世界科普网站</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<!-- 统一导航栏 -->
+<header class="nav-header">
+    <nav class="navbar">
+        <div class="logo">动物世界科普平台</div>
+        <ul class="nav-list">
+            <li><a href="index.html">网站首页</a></li>
+            <li><a href="land.html">陆生动物</a></li>
+            <li><a href="sea.html">海洋生物</a></li>
+            <li><a href="bird.html" class="active">飞禽鸟类</a></li>
+            <li><a href="protect.html">动物保护</a></li>
+        </ul>
+    </nav>
+</header>
 
-<header><h1>🦅 鸟类动物</h1></header>
+<main class="container">
+    <div class="page-title">
+        <h1>翱翔天际 · 飞禽鸟类总专区</h1>
+        <p>依照生态习性分为四大类别，点击卡片进入对应详情介绍</p>
+    </div>
 
-<nav>
-  <a href="index.html">首页</a>
-</nav>
+    <div class="animal-card-wrap">
+        <!-- 1 猛禽板块 -->
+        <div class="animal-card">
+            <h3>🦅 猛禽鸟类</h3>
+            <p>掠食性飞鸟，利爪锐喙，处于食物链上层，包含老鹰、猫头鹰等捕猎型鸟类</p>
+            <a href="bird_raptor.html" class="card-btn">查看详情</a>
+        </div>
+        <!-- 2 观赏鸟类 -->
+        <div class="animal-card">
+            <h3>🦜 观赏鸟类</h3>
+            <p>羽色艳丽、外形独特，常作为观赏品种，代表：孔雀、各类鹦鹉</p>
+            <a href="bird_view.html" class="card-btn">查看详情</a>
+        </div>
+        <!-- 3 候鸟水鸟 -->
+        <div class="animal-card">
+            <h3>🦢 候鸟水鸟</h3>
+            <p>依赖水域生存，随季节长途迁徙，代表物种：天鹅、海鸥、大雁</p>
+            <a href="bird_migrate.html" class="card-btn">查看详情</a>
+        </div>
+        <!-- 4 珍稀保护鸟类 -->
+        <div class="animal-card">
+            <h3>🕊️ 国家珍稀保护鸟类</h3>
+            <p>种群数量稀少，列入国家一、二级保护名录，严禁捕捉伤害</p>
+            <a href="bird_rare.html" class="card-btn">查看详情</a>
+        </div>
+    </div>
 
-<div class="cards">
+    <section class="tips-block">
+        <h2>鸟类保护倡议</h2>
+        <ul>
+            <li>不私自捕捉、笼养野生鸟类，拒绝野生鸟贩交易</li>
+            <li>遇到受伤野鸟优先联系当地野生动物救助机构</li>
+            <li>减少户外随意丢弃塑料袋，避免鸟类误食缠绕</li>
+        </ul>
+    </section>
+</main>
 
-  <div class="card">🦉 猫头鹰</div>
-  <div class="card">🦜 鹦鹉</div>
-  <div class="card">🦢 天鹅</div>
-  <div class="card">🦅 老鹰</div>
-
-</div>
-
+<footer class="footer">
+    <p>© 2026 动物世界科普项目 | GitHub Pages 静态网站</p>
+</footer>
 </body>
 </html>
