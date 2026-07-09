@@ -1,0 +1,179 @@
+/* 鸟类板块专属清新雅致林间飞鸟主题样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei", "思源黑体", sans-serif;
+}
+
+body {
+    background-color: #f7fbf9;
+    color: #2c3e35;
+    line-height: 1.7;
+}
+
+/* 导航栏柔和改版 */
+.nav-header {
+    background-color: #e8f3ee;
+    box-shadow: 0 2px 8px rgba(120, 160, 140, 0.15);
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    color: #3a6b5a;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: #446357;
+    font-size: 15px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: 0.3s ease;
+}
+
+.nav-list a.active {
+    background-color: #c8e2d7;
+    color: #2d5748;
+}
+
+.nav-list a:hover {
+    background-color: #d7e9e1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 24px;
+}
+
+.page-title {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #d1e2db;
+}
+
+.page-title h1 {
+    color: #356655;
+    font-size: 30px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.page-title p {
+    color: #64887a;
+    font-size: 16px;
+}
+
+.page-title a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #487d6b;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.page-title a:hover {
+    text-decoration: underline;
+}
+
+/* 卡片自适应布局 */
+.animal-card-wrap {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+.animal-card {
+    background: #ffffff;
+    border: 1px solid #e1ede8;
+    border-radius: 14px;
+    padding: 24px;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 12px rgba(135, 175, 160, 0.08);
+}
+
+.animal-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 6px 18px rgba(120, 165, 145, 0.14);
+    border-color: #b8d9cc;
+}
+
+.animal-card h3 {
+    color: #2f5e4e;
+    font-size: 20px;
+    margin-bottom: 12px;
+    padding-left: 8px;
+    border-left: 4px solid #73b89f;
+}
+
+.animal-card p {
+    color: #4a6b5f;
+    font-size: 14.5px;
+    margin-bottom: 16px;
+}
+
+.card-btn {
+    display: inline-block;
+    text-decoration: none;
+    background-color: #81bca6;
+    color: #ffffff;
+    padding: 8px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+
+.card-btn:hover {
+    background-color: #5fa88d;
+}
+
+.tips-block {
+    background-color: #e8f3ee;
+    padding: 28px 32px;
+    border-radius: 12px;
+    margin: 40px 0;
+}
+
+.tips-block h2 {
+    color: #326453;
+    margin-bottom: 14px;
+    font-size: 22px;
+}
+
+.tips-block ul {
+    padding-left: 22px;
+    color: #426559;
+}
+
+.tips-block li {
+    margin: 8px 0;
+}
+
+.footer {
+    text-align: center;
+    padding: 26px;
+    background-color: #e8f3ee;
+    color: #608073;
+    font-size: 14px;
+    margin-top: 60px;
+}
