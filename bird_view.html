@@ -114,11 +114,123 @@
             font-size: 16px;
             text-indent: 2em;
         }
+        .back-index{
+            display:block;
+            text-align:center;
+            margin-bottom:20px;
+            color:#487d6b;
+            text-decoration:none;
+        }
 
-        .species-grid {
+        .zone-title {
+            font-size: 28px;
+            color: #356655;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .zone-line {
+            width: 100px;
+            height: 3px;
+            background: #73b89f;
+            margin: 0 auto 40px;
+            border-radius: 3px;
+        }
+        .layer-wrap {
             max-width: 1200px;
             margin: 0 auto 80px;
             padding: 0 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+        }
+        .layer-item {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+        }
+        .layer-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .layer-image {
+            width: 50%;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(120, 160, 140, 0.12);
+        }
+        .layer-image img {
+            width: 100%;
+            display: block;
+        }
+        .layer-text {
+            width: 50%;
+        }
+        .layer-depth {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #c8e2d7;
+            color: #2d5748;
+            border-radius: 20px;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .layer-text h3 {
+            font-size: 24px;
+            color: #2f5e4e;
+            margin-bottom: 16px;
+        }
+        .layer-text p {
+            line-height: 1.8;
+            color: #4a6b5f;
+        }
+
+        .feature-wrap {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+        .feature-box {
+            display: flex;
+            gap: 36px;
+            align-items: center;
+        }
+        .feature-text {
+            width: 55%;
+        }
+        .feature-text h3 {
+            font-size: 24px;
+            color: #2f5e4e;
+            margin-bottom: 16px;
+        }
+        .feature-text p {
+            line-height: 1.8;
+            color: #4a6b5f;
+            margin-bottom: 16px;
+        }
+        .feature-list {
+            padding-left: 22px;
+            line-height: 1.8;
+            color: #426559;
+        }
+        .feature-list li {
+            margin: 8px 0;
+        }
+        .feature-img {
+            width: 45%;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(120, 160, 140, 0.12);
+        }
+        .feature-img img {
+            width: 100%;
+            display: block;
+        }
+
+        .species-wrap {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 24px;
+        }
+        .species-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
@@ -160,7 +272,7 @@
             color: #c0392b;
         }
 
-        .bird-eco {
+        .eco-wrap {
             max-width: 1200px;
             margin: 0 auto 80px;
             padding: 0 24px;
@@ -200,26 +312,19 @@
         .top-btn:hover {
             background: #5fa88d;
         }
-        .back-index{
-            display:block;
-            text-align:center;
-            margin-bottom:20px;
-            color:#487d6b;
-            text-decoration:none;
-        }
     </style>
 </head>
 
 <body>
 <div id="top"></div>
 <nav id="nav">
-  <div>🐾 动物世界科普平台</div>
+  <div>🐾 动物百科</div>
   <div>
-    <a href="index.html">网站首页</a>
-    <a href="land.html">陆生动物</a>
-    <a href="sea.html">海洋生物</a>
-    <a href="bird.html" class="active">飞禽鸟类</a>
-    <a href="protect.html">动物保护</a>
+    <a href="index.html">首页</a>
+    <a href="land.html">陆地</a>
+    <a href="sea.html">海洋</a>
+    <a href="bird.html" class="active">鸟类</a>
+    <a href="protect.html">保护</a>
   </div>
 </nav>
 
@@ -234,12 +339,60 @@
 <section class="intro">
     <h2 class="common-title">观赏鸟类类群概述</h2>
     <div class="line"></div>
-    <p>观赏鸟类依靠艳丽羽毛、多变鸣唱获得人类喜爱，长久以来被当作笼养宠物与园林景观动物。但我国2021年新版三有名录大范围升级保护等级，画眉、八哥、所有原生鹦鹉全部划入保护范畴。仅正规养殖场人工繁育、具备合法手续的个体允许流通饲养，野外捕捉、网捕售卖野生观赏鸟属于违法行为，会面临行政处罚与刑事拘留。</p>
+    <p>观赏鸟类依靠艳丽羽毛、多变鸣唱获得人类喜爱，长久以来被当作笼养宠物与园林景观动物。但我国2021年新版三有名录大范围升级保护等级，画眉、八哥、所有原生鹦鹉全部划入保护范畴。仅正规养殖场人工繁育、具备合法手续的个体允许流通饲养，野外捕捉、网捕售卖野生观赏鸟属于违法行为，会面临行政处罚与刑事拘留。此类鸟类长期人工驯化后野外生存能力大幅退化，随意放生会严重冲击本土野生鸟类生态种群。</p>
     <a href="bird.html" class="back-index">← 返回鸟类总专区首页</a>
 </section>
 
 <section>
-    <h2 class="common-title">三大代表观赏鸟类物种</h2>
+    <h2 class="zone-title">观赏鸟类两大驯养起源</h2>
+    <div class="zone-line"></div>
+    <div class="layer-wrap">
+        <div class="layer-item">
+            <div class="layer-image">
+                <img src="https://picsum.photos/id/1062/800/500" alt="本土原生观赏鸟">
+            </div>
+            <div class="layer-text">
+                <span class="layer-depth">本土原生种群</span>
+                <h3>国内原生鸣禽与观赏鸟</h3>
+                <p>画眉、百灵、相思鸟、八哥等均为我国本土原生鸟类，千百年来因悦耳鸣唱被大量捕捉笼养，野外种群数量断崖式下跌。出于物种保育需求，国家将该类物种全部升级为二级保护动物，彻底禁止个人私自捕捉、交易、无证饲养，从源头遏制野生种群枯竭。</p>
+            </div>
+        </div>
+        <div class="layer-item">
+            <div class="layer-image">
+                <img src="https://picsum.photos/id/1060/800/500" alt="外来引种宠物鸟">
+            </div>
+            <div class="layer-text">
+                <span class="layer-depth">外来引种繁育类</span>
+                <h3>境外引种人工繁育宠物鸟</h3>
+                <p>虎皮鹦鹉、玄凤鹦鹉等原产澳大利亚，经过上百年人工定向繁育，种群数量极其庞大，不属于我国本土野生保护物种。但需要严格区分：仅人工多代繁育个体可合规作为宠物，禁止私自放生野外，避免外来物种入侵挤压本土鸟类生存空间。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="feature-wrap">
+    <h2 class="common-title">观赏鸟类核心特质与人工饲养弊端</h2>
+    <div class="line"></div>
+    <div class="feature-box">
+        <div class="feature-text">
+            <h3>外形与习性演化特点</h3>
+            <p>人工选育会不断放大羽色艳丽、叫声多变等特征，但长期笼养会彻底丧失野外生存本能，造成物种生态层面的退化。</p>
+            <ul class="feature-list">
+                <li><strong>装饰性外观选育</strong>：人工繁育会筛选花色、尾羽长度，让外观更具备观赏价值，弱化野外伪装色。</li>
+                <li><strong>鸣唱后天驯化</strong>：原生鸟类鸣叫用于领地宣告与求偶，笼养环境下人为训练模仿声响，违背自然行为习性。</li>
+                <li><strong>飞行能力退化</strong>：狭小笼舍限制飞翔，胸肌萎缩、骨骼脆弱，放生后无法觅食躲避天敌，大概率短期内死亡。</li>
+                <li><strong>近亲繁育遗传病</strong>：小规模养殖户近亲繁殖，极易出现畸形、体弱、短命个体。</li>
+                <li><strong>野生捕捉高损耗</strong>：野捕过程中惊吓、挤压、运输缺水缺食，超半数鸟类在流通环节直接死亡。</li>
+            </ul>
+        </div>
+        <div class="feature-img">
+            <img src="https://picsum.photos/id/1055/800/600" alt="观赏鸟类特写">
+        </div>
+    </div>
+</section>
+
+<section class="species-wrap">
+    <h2 class="common-title">三大代表观赏鸟类物种详解</h2>
     <div class="line"></div>
     <div class="species-grid">
         <div class="species-card">
@@ -269,10 +422,10 @@
     </div>
 </section>
 
-<section class="bird-eco">
+<section class="eco-wrap">
     <h2 class="common-title">饲养与法律科普提醒</h2>
     <div class="line"></div>
-    <p class="eco-desc">很多花鸟市场私下兜售野捕画眉、百灵、相思鸟等鸣禽，此类鸟类大多在捕捉运输途中应激死亡，存活个体也携带病菌寄生虫。随意放生人工宠物鸟类会破坏本土生态链条，挤压原生鸟类生存资源。想要饲养观赏鸟类务必确认来源合法、手续齐全，拒绝来路不明野生个体，从源头抵制野鸟非法贸易。</p>
+    <p class="eco-desc">很多花鸟市场私下兜售野捕画眉、百灵、相思鸟等鸣禽，此类鸟类大多在捕捉运输途中应激死亡，存活个体也携带病菌寄生虫。随意放生人工宠物鸟类会破坏本土生态链条，挤压原生鸟类生存资源。想要饲养观赏鸟类务必确认来源合法、手续齐全，拒绝来路不明野生个体，从源头抵制野鸟非法贸易。同时城市公园、自然保护区内禁止私自投喂、捕捉野生鸟类，维护原生鸟类自然栖息环境。</p>
 </section>
 
 <footer>
