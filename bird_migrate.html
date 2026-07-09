@@ -127,43 +127,42 @@
             margin: 0 auto 40px;
             border-radius: 3px;
         }
+
+        /* 新版排版：取消左右分栏，统一上图下文垂直排列 */
         .layer-wrap {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto 80px;
             padding: 0 24px;
             display: flex;
             flex-direction: column;
-            gap: 48px;
+            gap: 50px;
         }
         .layer-item {
             display: flex;
-            gap: 32px;
-            align-items: center;
-        }
-        .layer-item:nth-child(even) {
-            flex-direction: row-reverse;
+            flex-direction: column;
+            gap: 24px;
         }
         .layer-image {
-            width: 50%;
-            border-radius: 14px;
+            width: 100%;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 16px rgba(120, 160, 140, 0.12);
+            box-shadow: 0 4px 18px rgba(120, 160, 140, 0.15);
         }
         .layer-image img {
             width: 100%;
             display: block;
         }
         .layer-text {
-            width: 50%;
+            width: 100%;
         }
         .layer-depth {
             display: inline-block;
-            padding: 4px 12px;
+            padding: 4px 14px;
             background: #c8e2d7;
             color: #2d5748;
-            border-radius: 20px;
+            border-radius: 22px;
             font-size: 14px;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .layer-text h3 {
             font-size: 24px;
@@ -175,18 +174,19 @@
             color: #4a6b5f;
         }
 
+        /* 特征模块同样改为上图下文 */
         .feature-wrap {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto 80px;
             padding: 0 24px;
         }
         .feature-box {
             display: flex;
-            gap: 36px;
-            align-items: center;
+            flex-direction: column;
+            gap: 28px;
         }
         .feature-text {
-            width: 55%;
+            width: 100%;
         }
         .feature-text h3 {
             font-size: 24px;
@@ -207,10 +207,10 @@
             margin: 8px 0;
         }
         .feature-img {
-            width: 45%;
-            border-radius: 14px;
+            width: 100%;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 4px 16px rgba(120, 160, 140, 0.12);
+            box-shadow: 0 4px 18px rgba(120, 160, 140, 0.15);
         }
         .feature-img img {
             width: 100%;
@@ -225,19 +225,29 @@
         .species-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
+            gap: 24px;
+        }
+        @media (max-width: 800px) {
+            .species-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 550px) {
+            .species-grid {
+                grid-template-columns: 1fr;
+            }
         }
         .species-card {
             background: #ffffff;
             border: 1px solid #e1ede8;
-            border-radius: 14px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 3px 12px rgba(135, 175, 160, 0.08);
             transition: all 0.3s ease;
         }
         .species-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 6px 18px rgba(120, 165, 145, 0.14);
+            box-shadow: 0 6px 20px rgba(120, 165, 145, 0.14);
         }
         .species-card img {
             width: 100%;
@@ -265,7 +275,7 @@
         }
 
         .eco-wrap {
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto 80px;
             padding: 0 24px;
         }
@@ -322,14 +332,14 @@
     <div class="banner-mask"></div>
     <div class="banner-content">
         <h1>🦢 迁徙候鸟水鸟专题</h1>
-        <p>跨越山海千里迁徙，栖息湿地河湖之间</p>
+        <p>跨越山海千里迁徙，栖居湿地河湖之间</p>
     </div>
 </section>
 
 <section class="intro">
     <h2 class="common-title">候鸟水鸟类群概述</h2>
     <div class="line"></div>
-    <p>候鸟水鸟指依赖淡水湖泊、滩涂、海岸湿地生存，具备季节性长途迁徙习性的鸟类。每到秋季，北方气温下降食物匮乏，它们便集群飞往南方越冬；次年春季气温回暖，再原路返回北方繁殖后代。这类鸟类对栖息地水质、湿地植被、鱼虾饵料依赖性极强，一旦湿地被填埋、污染、人为围垦，种群数量会快速衰退，因此湿地保护区是守护候鸟最重要的生态屏障。我国多条国际候鸟迁徙通道贯穿境内，是全球候鸟保护的关键区域。</p>
+    <p>候鸟水鸟指依赖淡水湖泊、滩涂、海岸湿地生存，具备季节性长途迁徙习性的鸟类。每到秋季北方降温食物匮乏，它们集群飞往南方越冬；次年春季气温回暖，沿固定路线返回北方繁殖后代。该类鸟类对栖息地水质、湿地植被、鱼虾饵料依赖性极强，一旦湿地被填埋、污染、围垦，种群数量会快速衰退，因此湿地自然保护区是守护候鸟最核心的生态屏障。我国多条国际候鸟迁徙通道贯穿国土，是全球候鸟保护的关键区域。</p>
     <a href="bird.html" class="back-index">← 返回鸟类总专区首页</a>
 </section>
 
@@ -344,7 +354,7 @@
             <div class="layer-text">
                 <span class="layer-depth">冬季越冬阶段</span>
                 <h3>南方湿地集群越冬</h3>
-                <p>秋冬时节候鸟离开繁殖地，抵达温暖的湖泊、滩涂、水库，成群结队栖息觅食。越冬期间不会筑巢繁育，主要囤积脂肪体能，为来年长途飞行储备能量。很多城市近郊湖泊每到冬季会迎来大量红嘴鸥、大雁、天鹅，成为极具观赏性的自然景观。</p>
+                <p>秋冬时节候鸟离开繁殖地，抵达温暖湖泊、滩涂、水库成群栖息觅食。越冬期间不筑巢繁育，主要囤积脂肪体能，为来年长途飞行储备能量。不少城市近郊湖泊每到冬季会迎来大量红嘴鸥、大雁、天鹅，成为极具观赏性的自然景观。</p>
             </div>
         </div>
         <div class="layer-item">
@@ -354,7 +364,7 @@
             <div class="layer-text">
                 <span class="layer-depth">春季迁徙繁殖</span>
                 <h3>编队飞行北上繁育</h3>
-                <p>候鸟多以人字、一字编队飞行，领头鸟破开气流减少队伍整体体力消耗。抵达北方沼泽、河滩、苔原后开始配对筑巢产卵，养育幼鸟。幼鸟当年跟随亲鸟完成第一次迁徙，依靠先天本能与族群记忆记住迁徙路线，世代延续迁徙行为。</p>
+                <p>候鸟常以人字、一字编队飞行，领头鸟破开气流降低整个队伍体力消耗。抵达北方沼泽、河滩、苔原后配对筑巢产卵抚育幼鸟。幼鸟当年跟随亲鸟完成首次迁徙，依靠先天本能与族群记忆锁定迁徙路线，世代延续迁徙习性。</p>
             </div>
         </div>
     </div>
@@ -368,11 +378,11 @@
             <h3>适配水陆与长途飞行的演化特点</h3>
             <p>身体结构同时兼顾飞行、游泳、潜水觅食，是高度特化的湿地鸟类类群。</p>
             <ul class="feature-list">
-                <li><strong>蹼状脚掌</strong>：脚趾间长有蹼膜，划水推进力强，可长时间漂浮水面休息觅食。</li>
-                <li><strong>中空轻量化骨骼</strong>：骨骼空心减重，搭配强大胸肌，支持连续上千公里不间断飞行。</li>
-                <li><strong>尾脂腺防水羽毛</strong>：尾部油脂涂抹全身羽毛，下水后不会浸湿身体，避免失温下沉。</li>
-                <li><strong>超强定向导航能力</strong>：依靠地磁、日月星辰、地标地貌定位，跨大洲飞行不会迷失路线。</li>
-                <li><strong>群居避险习性</strong>：集群活动可更早发现猛禽天敌，提升整体种群生存概率。</li>
+                <li><strong>蹼状脚掌</strong>：脚趾间生长蹼膜，划水推进力强劲，可长时间漂浮水面休息觅食。</li>
+                <li><strong>中空轻量化骨骼</strong>：骨骼空心减重，搭配发达胸肌，支撑上千公里不间断连续飞行。</li>
+                <li><strong>尾脂腺防水羽毛</strong>：尾部油脂涂抹全身羽毛，入水后不会浸湿躯体，避免失温下沉。</li>
+                <li><strong>超强定向导航能力</strong>：依托地磁场、日月星辰、地标地貌定位，跨大洲飞行不会迷失路线。</li>
+                <li><strong>群居避险习性</strong>：集群活动可以更早发现猛禽天敌，大幅提升种群整体生存概率。</li>
             </ul>
         </div>
         <div class="feature-img">
@@ -390,7 +400,7 @@
             <div class="species-content">
                 <h3>大天鹅</h3>
                 <p><strong>保护级别：国家二级保护动物</strong></p>
-                <p>通体雪白体态优雅，每年冬季聚集在黄河、长江沿线湖泊越冬。实行终身一夫一妻制，若配偶死亡大概率单独终老，严禁捕捞毒杀、惊扰越冬天鹅群。</p>
+                <p>通体雪白体态优雅，每年冬季聚集在黄河、长江沿线湖泊越冬。实行终身一夫一妻制，若配偶离世大多独自终老，严禁毒杀捕捞、惊扰越冬天鹅种群。</p>
             </div>
         </div>
         <div class="species-card">
@@ -398,7 +408,7 @@
             <div class="species-content">
                 <h3>红嘴鸥</h3>
                 <p><strong>保护级别：三有保护动物</strong></p>
-                <p>最常见城市越冬候鸟，每年冬季大量抵达昆明、青岛、武汉等城市河湖，亲人不怕人。但禁止投喂辣条、膨化零食，人类加工食品会损伤其消化系统导致死亡。</p>
+                <p>最常见城市越冬候鸟，每年冬季大量抵达昆明、青岛、武汉等城市河湖，性情亲人不怕人类。禁止投喂辣条、膨化零食，人工加工食品会损伤其消化系统导致死亡。</p>
             </div>
         </div>
         <div class="species-card">
@@ -406,7 +416,7 @@
             <div class="species-content">
                 <h3>鸿雁</h3>
                 <p><strong>保护级别：国家二级保护动物</strong></p>
-                <p>传统意象里的大雁，标准人字编队迁徙主力物种。野生鸿雁严禁捕捉食用，家鹅由鸿雁驯化而来，但野生种群依旧需要严格保护。</p>
+                <p>传统文化意象里的大雁，是人字编队迁徙的主力物种。家鹅由鸿雁驯化而来，但野生鸿雁依旧需要严格法律保护，禁止捕捉食用野生个体。</p>
             </div>
         </div>
     </div>
@@ -415,7 +425,7 @@
 <section class="eco-wrap">
     <h2 class="common-title">候鸟保护与湿地生态意义</h2>
     <div class="line"></div>
-    <p class="eco-desc">湿地被称作地球之肾，而候鸟就是湿地生态健康与否的直观指示灯。一旦某片湿地候鸟逐年减少，说明水体污染、鱼虾枯竭、栖息地被破坏。每年秋冬盗猎分子会在迁徙路线布设粘网、毒饵猎杀候鸟食用贩卖，此类行为属于严厉打击的违法犯罪。公众观赏候鸟请保持远距离拍摄，不喧哗驱赶、不随意投喂垃圾食物，保护候鸟迁徙中途补给站点，才能让年年归来的飞鸟不会消失在路途之中。</p>
+    <p class="eco-desc">湿地被称作地球之肾，候鸟就是湿地生态健康最直观的指示物种。一旦一片湿地候鸟逐年减少，就代表水体污染、鱼虾枯竭、栖息地遭到破坏。每年秋冬盗猎者会在迁徙沿线布设粘网、毒饵猎杀候鸟贩卖食用，该类行为属于重点打击的刑事犯罪。公众观赏候鸟请保持远距离拍摄，不大声喧哗驱赶、不随意投喂垃圾食品，守护候鸟迁徙中途补给站点，才能让年年如约归来的飞鸟不会消失在迁徙路途之中。</p>
 </section>
 
 <footer>
