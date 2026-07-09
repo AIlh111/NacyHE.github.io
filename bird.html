@@ -25,7 +25,6 @@
             background-color: rgba(255,255,255,0.08);
             transition: all 0.3s ease;
         }
-        /* 页面向下滚动后导航背景加深 */
         #nav.scrolled {
             background-color: #0f3443;
             box-shadow: 0 2px 12px rgba(0,0,0,0.25);
@@ -41,7 +40,6 @@
             font-size: 48px;
             transition: 0.3s;
         }
-        /* 当前页面：黄色文字+底部黄色下划线高亮 */
         #nav a.active {
             color: #ffdd00;
             border-bottom: 4px solid #ffdd00;
@@ -88,103 +86,116 @@
             opacity: 0.9;
         }
 
-        /* 玻璃卡片区域 脱离绝对定位，不会遮挡下方正文 */
+        /* 【新版排版】一行四列自适应卡片布局，大屏横向排列，小屏自动换行 */
         .category-area {
-            width: 85%;
-            margin: -80px auto 80px;
+            width: 90%;
+            max-width: 1400px;
+            margin: -90px auto 100px;
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
             position: relative;
             z-index: 10;
         }
+        @media (max-width: 1200px) {
+            .category-area {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 640px) {
+            .category-area {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .glass-card {
-            background: rgba(255, 255, 255, 0.18);
-            backdrop-filter: blur(8px);
-            -webkit-backdrop-filter: blur(8px);
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 16px;
-            padding: 24px;
+            background: rgba(0,0,0,0.28);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 20px;
+            padding: 28px 22px;
             text-align: center;
             color: #ffffff;
-            transition: all 0.3s ease;
+            transition: all 0.35s ease;
             display: flex;
             flex-direction: column;
-            background-color: rgba(0,0,0,0.25);
         }
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.28);
-            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
         }
         .glass-card img {
             width: 100%;
-            height: 160px;
+            height: 170px;
             object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 16px;
+            border-radius: 14px;
+            margin-bottom: 20px;
             display: block;
             overflow: hidden;
         }
         .glass-card h3 {
             font-size: 22px;
-            margin: 0 0 10px 0;
+            margin: 0 0 12px 0;
         }
         .glass-card p {
             font-size: 15px;
-            line-height: 1.6;
-            margin: 0 0 18px 0;
-            opacity: 0.92;
+            line-height: 1.65;
+            margin: 0 0 24px 0;
+            opacity: 0.93;
             flex-grow: 1;
         }
         .glass-card button {
-            padding: 9px 26px;
+            padding: 10px 28px;
             border: none;
-            border-radius: 8px;
-            background-color: #81bca6;
+            border-radius: 30px;
+            background-color: #72b8a4;
             color: #fff;
             font-size: 15px;
             cursor: pointer;
-            transition: 0.25s;
+            transition: 0.28s;
             margin-top: auto;
         }
         .glass-card button:hover {
-            background-color: #5fa88d;
+            background-color: #4a9c87;
         }
 
         /* 介绍正文板块 */
         .intro {
             max-width: 1200px;
-            margin: 0 auto 80px;
-            padding: 0 24px;
+            margin: 0 auto 100px;
+            padding: 0 30px;
             text-align: center;
         }
         .intro h2 {
-            font-size: 28px;
+            font-size: 30px;
             color: #356655;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
         }
         .line {
-            width: 80px;
-            height: 3px;
+            width: 90px;
+            height: 4px;
             background-color: #73b89f;
-            margin: 0 auto 30px;
-            border-radius: 3px;
+            margin: 0 auto 35px;
+            border-radius: 4px;
         }
         .intro p {
-            line-height: 1.8;
+            line-height: 1.85;
             color: #2c3e35;
-            font-size: 16px;
+            font-size: 17px;
             text-indent: 2em;
+            text-align: justify;
         }
 
         /* 页脚 */
         footer {
             width: 100%;
             text-align: center;
-            padding: 30px 0;
+            padding: 35px 0;
             background-color: #e8f3ee;
             color: #608073;
-            font-size: 14px;
+            font-size: 15px;
         }
 
         /* 回到顶部悬浮按钮 */
@@ -192,27 +203,26 @@
             position: fixed;
             right: 40px;
             bottom: 40px;
-            width: 46px;
-            height: 46px;
-            background: #81bca6;
+            width: 50px;
+            height: 50px;
+            background: #72b8a4;
             color: #fff;
             text-align: center;
-            line-height: 46px;
+            line-height: 50px;
             border-radius: 50%;
             text-decoration: none;
-            font-size: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+            font-size: 22px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
             z-index: 998;
         }
         .top-btn:hover {
-            background: #5fa88d;
+            background: #4a9c87;
         }
     </style>
 </head>
 
 <body>
 <div id="top"></div>
-<!-- 导航栏HTML 主页高亮【鸟类】 -->
 <nav id="nav">
   <div class="logo-text">🐾 动物百科</div>
   <a href="index.html">首页</a>
@@ -269,7 +279,6 @@
 
 <a href="#top" class="top-btn">↑</a>
 
-<!-- 导航滚动变色JS -->
 <script>
 window.addEventListener("scroll",()=>{
   let nav = document.getElementById("nav");
