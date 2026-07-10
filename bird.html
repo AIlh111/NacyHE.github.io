@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="bird.css">
     <style>
-        /* ========== 导航栏 与海洋页面样式完全统一 ========== */
         #top{
             height: 0;
         }
@@ -18,40 +17,51 @@
             left: 0;
             z-index: 999;
             display: flex;
-            justify-content: flex-start;
+            justify-content: space-between;
             align-items: center;
-            gap: 60px;
-            padding: 20px 60px;
-            background-color: rgba(255,255,255,0.08);
+            padding: 18px 40px;
+            background-color: rgba(255,255,255,0.15);
             transition: all 0.3s ease;
         }
         #nav.scrolled {
-            background-color: #0f3443;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+            background-color: #e8f3ee;
+            box-shadow: 0 2px 12px rgba(120, 160, 140, 0.18);
         }
-        #nav .logo-text{
-            font-size: 24px;
-            font-weight: bold;
+        #nav div:first-child {
+            font-size: 22px;
+            font-weight: 600;
             color: #fff;
+            letter-spacing: 1px;
+        }
+        #nav.scrolled div:first-child {
+            color: #3a6b5a;
         }
         #nav a {
+            margin: 0 10px;
             text-decoration: none;
             color: #ffffff;
-            font-size: 48px;
+            font-size: 15px;
+            padding: 6px 10px;
+            border-radius: 6px;
             transition: 0.3s;
         }
+        #nav.scrolled a {
+            color: #446357;
+        }
         #nav a.active {
-            color: #ffdd00;
-            border-bottom: 4px solid #ffdd00;
+            background-color: #c8e2d7;
+            color: #2d5748 !important;
         }
         #nav a:hover {
-            color: #ffdd00;
+            background-color: rgba(255,255,255,0.25);
+        }
+        #nav.scrolled a:hover {
+            background-color: #d7e9e1;
         }
 
-        /* 顶部Banner区域 */
         .bird-banner {
             width: 100%;
-            height: 65vh;
+            height: 100vh;
             margin-top: 0;
             position: relative;
             background-image: url('https://picsum.photos/id/1044/1920/1080');
@@ -69,9 +79,9 @@
         }
         .banner-content {
             position: absolute;
-            top: 50%;
+            top: 22%;
             left: 50%;
-            transform: translate(-50%,-50%);
+            transform: translate(-50%,0);
             text-align: center;
             color: #fff;
             z-index: 2;
@@ -86,137 +96,121 @@
             opacity: 0.9;
         }
 
-        /* 【新版排版】一行四列自适应卡片布局，大屏横向排列，小屏自动换行 */
         .category-area {
-            width: 90%;
-            max-width: 1400px;
-            margin: -90px auto 100px;
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 85%;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-            position: relative;
-            z-index: 10;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            z-index: 2;
         }
-        @media (max-width: 1200px) {
-            .category-area {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 640px) {
-            .category-area {
-                grid-template-columns: 1fr;
-            }
-        }
-
         .glass-card {
-            background: rgba(0,0,0,0.28);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.22);
-            border-radius: 20px;
-            padding: 28px 22px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 16px;
+            padding: 24px;
             text-align: center;
             color: #ffffff;
-            transition: all 0.35s ease;
+            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
         }
         .glass-card:hover {
-            background: rgba(255, 255, 255, 0.25);
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+            background: rgba(255, 255, 255, 0.28);
+            transform: translateY(-6px);
         }
         .glass-card img {
             width: 100%;
-            height: 170px;
+            height: 160px;
             object-fit: cover;
-            border-radius: 14px;
-            margin-bottom: 20px;
+            border-radius: 12px;
+            margin-bottom: 16px;
             display: block;
             overflow: hidden;
         }
         .glass-card h3 {
             font-size: 22px;
-            margin: 0 0 12px 0;
+            margin: 0 0 10px 0;
         }
         .glass-card p {
             font-size: 15px;
-            line-height: 1.65;
-            margin: 0 0 24px 0;
-            opacity: 0.93;
+            line-height: 1.6;
+            margin: 0 0 18px 0;
+            opacity: 0.92;
             flex-grow: 1;
         }
         .glass-card button {
-            padding: 10px 28px;
+            padding: 9px 26px;
             border: none;
-            border-radius: 30px;
-            background-color: #72b8a4;
+            border-radius: 8px;
+            background-color: #81bca6;
             color: #fff;
             font-size: 15px;
             cursor: pointer;
-            transition: 0.28s;
+            transition: 0.25s;
             margin-top: auto;
         }
         .glass-card button:hover {
-            background-color: #4a9c87;
+            background-color: #5fa88d;
         }
 
-        /* 介绍正文板块 */
         .intro {
             max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 30px;
+            margin: 80px auto;
+            padding: 0 24px;
             text-align: center;
         }
         .intro h2 {
-            font-size: 30px;
+            font-size: 28px;
             color: #356655;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
         .line {
-            width: 90px;
-            height: 4px;
+            width: 80px;
+            height: 3px;
             background-color: #73b89f;
-            margin: 0 auto 35px;
-            border-radius: 4px;
+            margin: 0 auto 30px;
+            border-radius: 3px;
         }
         .intro p {
-            line-height: 1.85;
+            line-height: 1.8;
             color: #2c3e35;
-            font-size: 17px;
+            font-size: 16px;
             text-indent: 2em;
-            text-align: justify;
         }
 
-        /* 页脚 */
         footer {
             width: 100%;
             text-align: center;
-            padding: 35px 0;
+            padding: 30px 0;
             background-color: #e8f3ee;
             color: #608073;
-            font-size: 15px;
+            font-size: 14px;
         }
 
-        /* 回到顶部悬浮按钮 */
         .top-btn {
             position: fixed;
             right: 40px;
             bottom: 40px;
-            width: 50px;
-            height: 50px;
-            background: #72b8a4;
+            width: 46px;
+            height: 46px;
+            background: #81bca6;
             color: #fff;
             text-align: center;
-            line-height: 50px;
+            line-height: 46px;
             border-radius: 50%;
             text-decoration: none;
-            font-size: 22px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+            font-size: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
             z-index: 998;
         }
         .top-btn:hover {
-            background: #4a9c87;
+            background: #5fa88d;
         }
     </style>
 </head>
@@ -224,12 +218,14 @@
 <body>
 <div id="top"></div>
 <nav id="nav">
-  <div class="logo-text">🐾 动物百科</div>
-  <a href="index.html">首页</a>
-  <a href="land.html">陆地</a>
-  <a href="sea.html">海洋</a>
-  <a href="bird.html" class="active">鸟类</a>
-  <a href="protect.html">保护</a>
+  <div>🐾 动物百科</div>
+  <div>
+    <a href="index.html">首页</a>
+    <a href="land.html">陆地</a>
+    <a href="sea.html">海洋</a>
+    <a href="bird.html" class="active">鸟类</a>
+    <a href="protect.html">保护</a>
+  </div>
 </nav>
 
 <section class="bird-banner">
@@ -238,34 +234,34 @@
         <h1>翱翔天际 · 飞鸟生灵世界</h1>
         <p>探寻羽翼之下的自然奥秘，守护天空之下万千飞鸟</p>
     </div>
-</section>
 
-<div class="category-area">
-    <div class="glass-card">
-        <img src="https://picsum.photos/id/1024/600/320" alt="掠食猛禽">
-        <h3>🦅 掠食猛禽</h3>
-        <p>拥有锐利爪喙与超强视力，身居食物链顶端，调控山林小型动物种群数量。</p>
-        <a href="bird_raptor.html"><button>立即探索</button></a>
+    <div class="category-area">
+        <div class="glass-card">
+            <img src="https://picsum.photos/id/1024/600/320" alt="掠食猛禽">
+            <h3>🦅 掠食猛禽</h3>
+            <p>拥有锐利爪喙与超强视力，身居食物链顶端，调控山林小型动物种群数量。</p>
+            <a href="bird_raptor.html"><button>立即探索</button></a>
+        </div>
+        <div class="glass-card">
+            <img src="https://picsum.photos/id/1065/600/320" alt="观赏珍鸟">
+            <h3>🦜 观赏珍鸟</h3>
+            <p>羽色艳丽鸣唱婉转，多被人工繁育观赏，野生原生种类大多列入保护名录。</p>
+            <a href="bird_view.html"><button>立即探索</button></a>
+        </div>
+        <div class="glass-card">
+            <img src="https://picsum.photos/id/1071/600/320" alt="迁徙候鸟水鸟">
+            <h3>🦢 迁徙候鸟水鸟</h3>
+            <p>依托湿地河湖生存，春秋跨越千里长途迁徙，是水域生态环境的直观风向标。</p>
+            <a href="bird_migrate.html"><button>立即探索</button></a>
+        </div>
+        <div class="glass-card">
+            <img src="https://picsum.photos/id/1068/600/320" alt="珍稀保护鸟类">
+            <h3>🕊️ 珍稀保护鸟类</h3>
+            <p>野外种群极度濒危，纳入国家一级重点保护物种，非法猎捕交易将承担法律责任。</p>
+            <a href="bird_rare.html"><button>立即探索</button></a>
+        </div>
     </div>
-    <div class="glass-card">
-        <img src="https://picsum.photos/id/1065/600/320" alt="观赏珍鸟">
-        <h3>🦜 观赏珍鸟</h3>
-        <p>羽色艳丽鸣唱婉转，多被人工繁育观赏，野生原生种类大多列入保护名录。</p>
-        <a href="bird_view.html"><button>立即探索</button></a>
-    </div>
-    <div class="glass-card">
-        <img src="https://picsum.photos/id/1071/600/320" alt="迁徙候鸟水鸟">
-        <h3>🦢 迁徙候鸟水鸟</h3>
-        <p>依托湿地河湖生存，春秋跨越千里长途迁徙，是水域生态环境的直观风向标。</p>
-        <a href="bird_migrate.html"><button>立即探索</button></a>
-    </div>
-    <div class="glass-card">
-        <img src="https://picsum.photos/id/1068/600/320" alt="珍稀保护鸟类">
-        <h3>🕊️ 珍稀保护鸟类</h3>
-        <p>野外种群极度濒危，纳入国家一级重点保护物种，非法猎捕交易将承担法律责任。</p>
-        <a href="bird_rare.html"><button>立即探索</button></a>
-    </div>
-</div>
+</section>
 
 <section class="intro">
     <h2>探索飞鸟生灵世界</h2>
