@@ -79,7 +79,7 @@
         }
         .banner-content {
             position: absolute;
-            top: 22%;
+            top: 12%;
             left: 50%;
             transform: translate(-50%,0);
             text-align: center;
@@ -96,17 +96,42 @@
             opacity: 0.9;
         }
 
-        .category-area {
+        /* 外层半透明大背景容器 */
+        .category-wrap {
             position: absolute;
-            top: 40%;
+            top: 28%;
             left: 50%;
             transform: translateX(-50%);
-            width: 85%;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
+            width: 92%;
+            max-width: 1400px;
+            padding: 36px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border: 1px solid rgba(255,255,255,0.18);
+            border-radius: 20px;
             z-index: 2;
         }
+
+        /* 一行四列布局 */
+        .category-area {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+        /* 平板两列 */
+        @media (max-width: 1200px) {
+            .category-area {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        /* 手机单列 */
+        @media (max-width: 640px) {
+            .category-area {
+                grid-template-columns: 1fr;
+            }
+        }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.18);
             backdrop-filter: blur(8px);
@@ -119,6 +144,7 @@
             transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
+            height: 100%;
         }
         .glass-card:hover {
             background: rgba(255, 255, 255, 0.28);
@@ -235,30 +261,33 @@
         <p>探寻羽翼之下的自然奥秘，守护天空之下万千飞鸟</p>
     </div>
 
-    <div class="category-area">
-        <div class="glass-card">
-            <img src="https://picsum.photos/id/1024/600/320" alt="掠食猛禽">
-            <h3>🦅 掠食猛禽</h3>
-            <p>拥有锐利爪喙与超强视力，身居食物链顶端，调控山林小型动物种群数量。</p>
-            <a href="bird_raptor.html"><button>立即探索</button></a>
-        </div>
-        <div class="glass-card">
-            <img src="https://picsum.photos/id/1065/600/320" alt="观赏珍鸟">
-            <h3>🦜 观赏珍鸟</h3>
-            <p>羽色艳丽鸣唱婉转，多被人工繁育观赏，野生原生种类大多列入保护名录。</p>
-            <a href="bird_view.html"><button>立即探索</button></a>
-        </div>
-        <div class="glass-card">
-            <img src="https://picsum.photos/id/1071/600/320" alt="迁徙候鸟水鸟">
-            <h3>🦢 迁徙候鸟水鸟</h3>
-            <p>依托湿地河湖生存，春秋跨越千里长途迁徙，是水域生态环境的直观风向标。</p>
-            <a href="bird_migrate.html"><button>立即探索</button></a>
-        </div>
-        <div class="glass-card">
-            <img src="https://picsum.photos/id/1068/600/320" alt="珍稀保护鸟类">
-            <h3>🕊️ 珍稀保护鸟类</h3>
-            <p>野外种群极度濒危，纳入国家一级重点保护物种，非法猎捕交易将承担法律责任。</p>
-            <a href="bird_rare.html"><button>立即探索</button></a>
+    <!-- 外层半透明大背景容器 -->
+    <div class="category-wrap">
+        <div class="category-area">
+            <div class="glass-card">
+                <img src="https://picsum.photos/id/1024/600/320" alt="掠食猛禽">
+                <h3>🦅 掠食猛禽</h3>
+                <p>拥有锐利爪喙与超强视力，身居食物链顶端，调控山林小型动物种群数量。</p>
+                <a href="bird_raptor.html"><button>立即探索</button></a>
+            </div>
+            <div class="glass-card">
+                <img src="https://picsum.photos/id/1065/600/320" alt="观赏珍鸟">
+                <h3>🦜 观赏珍鸟</h3>
+                <p>羽色艳丽鸣唱婉转，多被人工繁育观赏，野生原生种类大多列入保护名录。</p>
+                <a href="bird_view.html"><button>立即探索</button></a>
+            </div>
+            <div class="glass-card">
+                <img src="https://picsum.photos/id/1071/600/320" alt="迁徙候鸟水鸟">
+                <h3>🦢 迁徙候鸟水鸟</h3>
+                <p>依托湿地河湖生存，春秋跨越千里长途迁徙，是水域生态环境的直观风向标。</p>
+                <a href="bird_migrate.html"><button>立即探索</button></a>
+            </div>
+            <div class="glass-card">
+                <img src="https://picsum.photos/id/1068/600/320" alt="珍稀保护鸟类">
+                <h3>🕊️ 珍稀保护鸟类</h3>
+                <p>野外种群极度濒危，纳入国家一级重点保护物种，非法猎捕交易将承担法律责任。</p>
+                <a href="bird_rare.html"><button>立即探索</button></a>
+            </div>
         </div>
     </div>
 </section>
