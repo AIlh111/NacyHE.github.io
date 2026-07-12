@@ -127,7 +127,38 @@ nav a.active{
     max-width:900px;
     margin:0 auto;
 }
-/* ========= 左右交替图文板块 ========= */
+/* ========= 左右交替图文板块 - 优化居中对齐 ========= */
+.left-right {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    max-width: 1300px;
+    margin: 60px auto;
+    padding: 0 40px;
+}
+.left-right.reverse {
+    flex-direction: row-reverse;
+}
+.left-right img {
+    width: 48%;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    flex-shrink: 0;
+}
+.left-right .text {
+    width: 52%;
+}
+/* 响应式 - 手机端上下排列 */
+@media (max-width: 992px) {
+    .left-right, .left-right.reverse {
+        flex-direction: column;
+        gap: 30px;
+    }
+    .left-right img, .left-right .text {
+        width: 100%;
+    }
+}
+/* ========= 草原生态特征 ========= */
 .grass-zone {
     width: 100%;
     background: #17212f;
