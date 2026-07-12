@@ -1,22 +1,32 @@
-/* land.css - 深色陆地风格 */
-* { margin:0; padding:0; box-sizing:border-box; }
-
-body {
+/*==================================================
+                陆地野生动物专区 land.css
+==================================================*/
+/* ========= 全局通用样式 ========= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html{
+    scroll-behavior:smooth;
+}
+body{
     font-family:"Microsoft YaHei",sans-serif;
     background:#0f172a;
     color:#e2e8f0;
     overflow-x:hidden;
 }
-
-img {
+/* 全局图片统一重置 */
+img{
     max-width:100%;
     display:block;
     transition:.35s;
 }
-img:hover { transform:scale(1.03); }
-
-/* 导航 */
-nav {
+img:hover{
+    transform:scale(1.03);
+}
+/* ========= 顶部导航栏 ========= */
+nav{
   position:fixed;
   top:0;
   width:100%;
@@ -29,56 +39,116 @@ nav {
   transition:0.3s;
   z-index:999;
 }
-nav.scrolled {
+nav.scrolled{
   background:#1e2937;
 }
-nav a {
+nav a{
   color:white;
   margin:0 12px;
   text-decoration:none;
   font-weight:bold;
   transition:0.3s;
 }
-nav a:hover, nav a.active {
+nav a:hover{
   color:#86efac;
 }
-
-/* Banner */
-.land-banner {
+nav a.active{
+  color:#86efac;
+  font-weight:bold;
+}
+/* ========= 全屏横幅Banner ========= */
+.land-banner{
     position:relative;
     width:100%;
-    min-height:70vh;
+    min-height:100vh;
     padding-top:80px;
-    background:linear-gradient(rgba(20,30,40,.5),rgba(50,70,50,.6)), url("images/land-banner.jpg");
+    background:linear-gradient(rgba(15,23,42,.4),rgba(34,139,34,.35)),url("images/land-banner.jpg");
     background-size:cover;
     background-position:center;
+    background-repeat:no-repeat;
 }
-
-/* 其他样式... */
-.glass-card {
+.banner-mask{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(rgba(15,23,42,.25),rgba(34,139,34,.25));
+    z-index:1;
+}
+/* Banner中间标题文字 */
+.banner-content{
+    position:relative;
+    z-index:2;
+    width:100%;
+    text-align:center;
+    color:white;
+    padding:120px 20px 60px;
+}
+.banner-content h1{
+    font-size:64px;
+    letter-spacing:4px;
+    margin-bottom:25px;
+    text-shadow:0 6px 18px rgba(0,0,0,.45);
+    color:#86efac;
+}
+.banner-content p{
+    font-size:24px;
+    letter-spacing:2px;
+    text-shadow:0 3px 10px rgba(0,0,0,.4);
+}
+/* 卡片外层容器 */
+.category-area{
+    position:relative;
+    z-index:2;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    gap:28px;
+    flex-wrap:wrap;
+    padding:20px 20px 80px;
+}
+/* 玻璃毛玻璃卡片样式（深色版） */
+.glass-card{
     width:270px;
     min-height:380px;
     padding:25px 20px;
     border-radius:22px;
     background:rgba(30,41,59,0.85);
-    border:1px solid rgba(134,239,172,0.3);
+    border:1px solid rgba(134,239,172,0.35);
+    backdrop-filter:blur(15px);
+    -webkit-backdrop-filter:blur(15px);
     text-align:center;
+    color:white;
     transition:.4s;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+    position:relative;
 }
-.glass-card:hover {
-    transform:translateY(-12px) scale(1.03);
-}
-.glass-card img {
+.glass-card img{
     width:100%;
     height:140px;
     border-radius:14px;
     object-fit:cover;
     margin-bottom:15px;
 }
-.glass-card h3 {
+.glass-card:hover{
+    transform:translateY(-12px) scale(1.03);
+    box-shadow:0 20px 45px rgba(134,239,172,0.25);
+}
+.glass-card h3{
+    font-size:22px;
+    margin-bottom:12px;
+    letter-spacing:1px;
     color:#86efac;
 }
-.glass-card button {
+.glass-card p{
+    font-size:15px;
+    line-height:26px;
+    color:rgba(226,232,240,0.95);
+    min-height:75px;
+}
+/* 卡片内按钮 */
+.glass-card button{
     margin-top:18px;
     width:150px;
     height:45px;
@@ -86,17 +156,135 @@ nav a:hover, nav a.active {
     border-radius:30px;
     background:#4ade80;
     color:#0f172a;
+    font-size:16px;
     font-weight:bold;
     cursor:pointer;
+    transition:.35s;
 }
-.glass-card button:hover {
+.glass-card button:hover{
     background:white;
     color:#166534;
+    transform:scale(1.05);
+}
+/* 卡片依次上浮入场动画 */
+@keyframes cardUp{
+    from{
+        opacity:0;
+        transform:translateY(60px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+.glass-card:nth-child(1){animation:cardUp .8s ease;}
+.glass-card:nth-child(2){animation:cardUp 1s ease;}
+.glass-card:nth-child(3){animation:cardUp 1.2s ease;}
+.glass-card:nth-child(4){animation:cardUp 1.4s ease;}
+
+/* 卡片顶部装饰绿线 */
+.glass-card::before{
+    content:"";
+    display:block;
+    width:70px;
+    height:4px;
+    background:#4ade80;
+    margin:0 auto 15px;
+    border-radius:5px;
 }
 
-/* 其他样式可以继续添加 */
-.intro {
+/* 海洋介绍板块 */
+.intro{
+    width:100%;
     background:#1e2937;
     padding:80px 15%;
     text-align:center;
+}
+.intro h2{
+    color:#86efac;
+    font-size:42px;
+    margin-bottom:25px;
+}
+.line{
+    width:90px;
+    height:4px;
+    margin:0 auto 35px;
+    border-radius:5px;
+    background:#4ade80;
+}
+.intro p{
+    color:#cbd5e1;
+    font-size:18px;
+    line-height:36px;
+    max-width:900px;
+    margin:0 auto;
+}
+/* 页面底部页脚 */
+footer{
+    background:#0a0f1c;
+    color:#64748b;
+    text-align:center;
+    padding:30px;
+}
+/* 返回顶部悬浮按钮 */
+.top-btn{
+    position:fixed;
+    right:30px;
+    bottom:35px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:#4ade80;
+    color:#0f172a;
+    text-align:center;
+    line-height:55px;
+    font-size:24px;
+    text-decoration:none;
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
+    transition:.35s;
+    z-index:999;
+}
+.top-btn:hover{
+    background:#86efac;
+    transform:translateY(-6px);
+}
+/* ============ 多设备自适应媒体查询 ============ */
+/* 大屏电脑 */
+@media screen and (max-width:1200px){
+    .category-area{gap:20px;}
+    .glass-card{width:240px;}
+}
+/* 平板 */
+@media screen and (max-width:992px){
+    .banner-content h1{font-size:52px;}
+    .banner-content p{font-size:20px;}
+    .glass-card{width:320px;}
+    .intro{padding:60px 10%;}
+}
+/* 手机端 */
+@media screen and (max-width:768px){
+    nav{
+        flex-direction:column;
+        padding:15px;
+        gap:12px;
+    }
+    nav div{
+        width:100%;
+        text-align:center;
+    }
+    nav div:last-child{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        row-gap:8px;
+    }
+    .banner-content h1{font-size:40px;}
+    .banner-content p{font-size:18px;line-height:30px;}
+    .glass-card{width:90%;max-width:360px;}
+}
+/* 超小手机 */
+@media screen and (max-width:480px){
+    .banner-content h1{font-size:32px;}
+    .banner-content p{font-size:16px;}
+    .intro h2{font-size:30px;}
 }
