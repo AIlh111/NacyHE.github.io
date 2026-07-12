@@ -168,7 +168,7 @@ nav a:hover, nav a.active {
 .land-showcase {
     width: 100%;
     min-height: 500px;
-    background: url("land/images/savanna.jpg");  /* ← 图片名填这里 */
+    background: url("images/savanna.jpg");  /* ← 图片名填这里 */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
