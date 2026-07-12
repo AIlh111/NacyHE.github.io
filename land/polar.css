@@ -12,7 +12,7 @@ html{
 }
 body{
     font-family:"Microsoft YaHei",sans-serif;
-    background:linear-gradient(rgba(15,23,42,.4),rgba(34,139,34,.35)), url("images/polar1.jpg");
+    background: url("images/polar2.jpg");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
