@@ -1,5 +1,5 @@
 /*==================================================
-                草原动物专题 grassland.css
+                森林动物专题 forest.css
 ==================================================*/
 /* ========= 全局通用样式 ========= */
 *{
@@ -23,7 +23,7 @@ img{
     transition:.35s;
 }
 img:hover{
-    transform:scale(1.03);
+    transform:scale(1.02);
 }
 /* ========= 顶部导航栏 ========= */
 nav{
@@ -41,7 +41,6 @@ nav{
 }
 nav.scrolled{
   background:#1e2937;
-  box-shadow:0 4px 15px rgba(0,0,0,0.5);
 }
 nav a{
   color:white;
@@ -57,13 +56,13 @@ nav a.active{
   color:#86efac;
   font-weight:bold;
 }
-/* ========= 草原专题专属Banner ========= */
-.grass-banner{
+/* ========= 森林专题专属Banner ========= */
+.forest-banner{
     position:relative;
     width:100%;
     min-height:70vh;
     padding-top:80px;
-    background:linear-gradient(rgba(40,60,30,.5),rgba(60,90,40,.6)),url("../images/grassland.jpg");
+    background:linear-gradient(rgba(20,40,30,.5),rgba(30,60,40,.6)),url("../images/forest.jpg");
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
@@ -74,7 +73,7 @@ nav a.active{
     left:0;
     width:100%;
     height:100%;
-    background:linear-gradient(rgba(15,23,42,.4),rgba(34,139,34,.3));
+    background:linear-gradient(rgba(15,23,42,.25),rgba(34,139,34,.3));
     z-index:1;
 }
 .banner-content{
@@ -127,64 +126,91 @@ nav a.active{
     max-width:900px;
     margin:0 auto;
 }
-/* ========= 左右交替图文板块 - 优化居中 ========= */
-.left-right {
-    display: flex;
-    gap: 50px;
-    align-items: center;
-    max-width: 1300px;
-    margin: 60px auto;
-    padding: 0 40px;
-}
-.left-right.reverse {
-    flex-direction: row-reverse;
-}
-.left-right img {
-    width: 48%;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    flex-shrink: 0;
-}
-.left-right .text {
-    width: 52%;
-}
-/* 响应式 - 手机端上下排列 */
-@media (max-width: 992px) {
-    .left-right, .left-right.reverse {
-        flex-direction: column;
-        gap: 30px;
-    }
-    .left-right img, .left-right .text {
-        width: 100%;
-    }
-}
-/* 草原生态特征 */
-.grass-zone {
+/* ========= 左右交替图文板块（与荒漠保持一致的结构） ========= */
+.forest-zone {
     width: 100%;
     background: #17212f;
     padding: 80px 15%;
 }
-.grass-features {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
+.forest-layers {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.layer-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    background: #1e2937;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.4);
+    transition: .35s;
+}
+.layer-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.25);
+}
+/* 偶数项图片右置，实现左右交替 */
+.layer-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.layer-image {
+    flex: 1;
+    min-width: 300px;
+    border-radius: 18px;
+    overflow: hidden;
+}
+.layer-image img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: .5s;
+}
+.layer-image img:hover {
+    transform: scale(1.05);
+}
+.layer-text {
+    flex: 1;
+    min-width: 300px;
+}
+.layer-depth {
+    display: inline-block;
+    margin-bottom: 18px;
+    padding: 6px 16px;
+    border-radius: 20px;
+    background: #14532d;
+    color: #86efac;
+    font-weight: bold;
+    font-size: 15px;
+}
+.layer-text h3 {
+    color: #86efac;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.layer-text p {
+    font-size: 16px;
+    line-height: 30px;
+    color: #cbd5e1;
 }
 /* 特征板块 */
-.grass-feature{
+.forest-feature{
     width:100%;
-    background:#17212f;
+    background:#1e2937;
     padding:80px 15%;
 }
 .feature-box{
     display:flex;
     flex-wrap:wrap;
-    gap:50px;
+    gap:40px;
     align-items:center;
     margin-top:30px;
 }
 .feature-text{
     flex:1;
-    min-width:320px;
+    min-width:300px;
 }
 .feature-text h3{
     color:#86efac;
@@ -195,45 +221,45 @@ nav a.active{
     font-size:17px;
     line-height:34px;
     color:#cbd5e1;
-    margin-bottom:20px;
+    margin-bottom:16px;
 }
 .feature-list{
-    margin-top:15px;
+    margin-top:20px;
 }
 .feature-list li{
     list-style:none;
-    font-size:16.5px;
+    font-size:16px;
     line-height:32px;
     color:#cbd5e1;
-    margin-bottom:14px;
-    padding-left:24px;
+    margin-bottom:12px;
+    padding-left:20px;
     position:relative;
 }
 .feature-list li::before{
-    content:"→";
+    content:"●";
     color:#4ade80;
     position:absolute;
     left:0;
-    font-size:18px;
+    font-size:20px;
 }
 .feature-img{
     flex:1;
-    min-width:320px;
+    min-width:300px;
     border-radius:20px;
     overflow:hidden;
-    box-shadow:0 12px 35px rgba(0,0,0,.5);
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 .feature-img img{
     width:100%;
     transition:.5s;
 }
 .feature-img img:hover{
-    transform:scale(1.04);
+    transform:scale(1.05);
 }
 /* 代表物种卡片 */
-.grass-species{
+.forest-species{
     width:100%;
-    background:#1e2937;
+    background:#17212f;
     padding:80px 15%;
 }
 .species-grid{
@@ -243,28 +269,28 @@ nav a.active{
     margin-top:40px;
 }
 .species-card{
-    background:#17212f;
+    background:#1e2937;
     border-radius:20px;
     overflow:hidden;
     box-shadow:0 8px 25px rgba(0,0,0,.4);
-    transition:.4s;
+    transition:.35s;
 }
 .species-card:hover{
-    transform:translateY(-12px);
-    box-shadow:0 20px 45px rgba(134,239,172,0.2);
+    transform:translateY(-10px);
+    box-shadow:0 18px 40px rgba(134,239,172,0.2);
 }
 .species-card img{
     width:100%;
-    height:240px;
+    height:220px;
     object-fit:cover;
 }
 .species-content{
-    padding:28px;
+    padding:25px;
 }
 .species-content h3{
     color:#86efac;
-    font-size:23px;
-    margin-bottom:14px;
+    font-size:22px;
+    margin-bottom:12px;
 }
 .species-content p{
     color:#cbd5e1;
@@ -272,16 +298,16 @@ nav a.active{
     line-height:30px;
 }
 /* 生态价值板块 */
-.grass-eco{
+.forest-eco{
     width:100%;
-    background:#17212f;
+    background:#1e2937;
     padding:80px 15%;
     text-align:center;
 }
 .eco-desc{
-    max-width:950px;
+    max-width:900px;
     margin:0 auto;
-    font-size:17.5px;
+    font-size:17px;
     line-height:36px;
     color:#cbd5e1;
 }
@@ -290,48 +316,27 @@ footer{
     background:#0a0f1c;
     color:#64748b;
     text-align:center;
-    padding:35px;
+    padding:30px;
 }
-/* 返回顶部 */
+/* 返回顶部按钮 */
 .top-btn{
     position:fixed;
-    right:35px;
-    bottom:40px;
-    width:58px;
-    height:58px;
+    right:30px;
+    bottom:35px;
+    width:55px;
+    height:55px;
     border-radius:50%;
     background:#4ade80;
     color:#0f172a;
     text-align:center;
-    line-height:58px;
-    font-size:26px;
+    line-height:55px;
+    font-size:24px;
     text-decoration:none;
-    box-shadow:0 8px 20px rgba(0,0,0,.5);
+    box-shadow:0 8px 18px rgba(0,0,0,.25);
     transition:.35s;
     z-index:999;
 }
 .top-btn:hover{
     background:#86efac;
-    transform:translateY(-8px);
-}
-/* ========= 自适应 ========= */
-@media screen and (max-width:1200px){
-    .intro,.grass-zone,.grass-feature,.grass-species,.grass-eco{
-        padding:60px 8%;
-    }
-}
-@media screen and (max-width:992px){
-    .banner-content h1{font-size:48px;}
-    .banner-content p{font-size:20px;}
-}
-@media screen and (max-width:768px){
-    nav{
-        flex-direction:column;
-        padding:15px;
-        gap:12px;
-    }
-}
-@media screen and (max-width:480px){
-    .banner-content h1{font-size:34px;}
-    .common-title{font-size:30px;}
+    transform:translateY(-6px);
 }
