@@ -4,7 +4,11 @@ html { scroll-behavior:smooth; }
 
 body {
     font-family:"Microsoft YaHei",sans-serif;
-    background:#0f172a;
+    background:linear-gradient(rgba(15,23,42,.4),rgba(34,139,34,.35)), url("land/images/savanna.jpg");
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
     color:#e2e8f0;
 }
 
@@ -42,7 +46,7 @@ nav a:hover, nav a.active {
     width:100%;
     min-height:100vh;
     padding-top:80px;
-    background:linear-gradient(rgba(15,23,42,.4),rgba(34,139,34,.35)), url("images/land-banner.jpg");
+    background:linear-gradient(rgba(15,23,42,.4),rgba(34,139,34,.35)), url("land/images/savanna.jpg");
     background-size:cover;
     background-position:center;
 }
@@ -165,15 +169,7 @@ nav a:hover, nav a.active {
     font-size:18px;
     line-height:36px;
 }
-/* 背景图片展示 */
-.land-showcase {
-    width: 100%;
-    min-height: 500px;
-    background: url("land/images/savanna.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
+
 /* 页脚 */
 footer {
     background:#0a0f1c;
